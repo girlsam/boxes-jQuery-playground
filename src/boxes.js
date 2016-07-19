@@ -28,17 +28,24 @@ $(document).ready(function() {
   // });
 
 //Add links inside all red box divs that take the user to galvanize. Then add an on click handler that alerts the user that you can never leave the page. Make sure the user won't leave the page after the alert! <<<Not sure if there's a way to do this in jquery, or I just need to instill in the clicker an insurmountable fear in god. I went with the latter.
-  // $(".boxType1").html('<a href="http://www.galvanize.com">Galvanize</a>');
-  // $(".boxType1").click(function() {
+  // $('.boxType1').html('<a href='http://www.galvanize.com'>Galvanize</a>');
+  // $('.boxType1').click(function() {
   // alert("Someone told me to tell you you can't leave here. Seriously, if you do Donald Trump will become president");
   // });
 
 //For all box divs, add a click handler that adds an image of a cute puppy to the box. If the image is clicked again, remove the cute puppy.
-$('.box').on("click", function() {
+$('.box').on('click', function() {
   $(this).html("<img src='http://cdn5.littlethings.com/app/uploads/2014/10/l-unamused-puppy.jpg'/>");
 }, function() {
   $('.box > img').remove();
 });
 
 //Write a click handler on the container div. The click handler should turn the container background to black and the background of the original div that was clicked to white. If the user original div that was clicked happened to be the container div, change the background of the container div to lime green. You should not use any selectors for this exercise. You can do it completely with what is given to you in the event callback.
+$('#container').on('click', function() {
+  if ($('div').hasClass('.box')) {
+    $(this).css('background color', 'white');
+  } else { ($('#container').css('background-color', '#32CD32')
+  );
+}
+});
 });
